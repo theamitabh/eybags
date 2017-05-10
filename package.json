@@ -1,0 +1,23 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "Proxy for CORS avoidance",
+  "main": "index.js",
+  "scripts": {
+     "start": "node index.js"
+  },
+  "keywords": [
+    "amitabh"
+  ],
+  "author": "acheekoth@etihad.ae",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "json-proxy": "^0.9.3",
+    "morgan": "^1.8.1"
+  },
+  "engines": {
+  	"node": "4.x"
+  }
+
+}
