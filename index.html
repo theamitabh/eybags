@@ -32,9 +32,13 @@
 				<span ng-show="frmbag.depdate.$error.pattern" style="color:red">Enter Valid DepartureDate</span>
 			  </div>
 			  <div class="input-group">
+			  	<input type="submit" value ="Get bags" class="btn btn-primary" ng-click="loadBagTags()"/>
+			  </div>
 			  
-				<!-- <button class="btn btn-primary" ng-click="loadBagTags()">List Bags</button> -->
-				<input type="submit" value ="Get bags" class="btn btn-primary" ng-click="loadBagTags()"/>
+			  <span ng-show="frmbag.depdate.$error.pattern" style="color:red">Enter Valid DepartureDate</span>
+			  
+			  <div class="alert alert-warning" ng-show="noBagsFound">
+				  <strong>No Baggage Information </strong> Kindly check your PNR and departure date.
 			  </div>
 			  
 			  

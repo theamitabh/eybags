@@ -29,18 +29,24 @@ app.controller('bagController', function ($scope, $http) {
 		$scope.listOfBags = null;
 		$scope.listOfBagEvents = null;
 		$scope.showBagHeader = false;
+		$scope.noBagsFound = false;
 		$scope.selectedBag = null;
 
 		var apiurl = '/eyapi/baggage/v1/getguestbags?pnrnum=' + $scope.pnrNum.toUpperCase() + '&depdate=' + $scope.depDate;
+		
 		$http.get(apiurl)
-
 			.success(function (data) {
 				$scope.listOfBags = data.bags;
-
-				if ($scope.listOfBags.length > 0) {
+				var isSuccess = data.success;
+								
+				if (isSuccess && $scope.listOfBags.length > 0) {
 					$scope.showBagHeader = true;
 					$scope.selectedBag = $scope.listOfBags[0].bagtag;
 					$scope.loadEvents();
+					$scope.noBagsFound = false;
+				
+				} else{
+					$scope.noBagsFound = true;
 				}
 			})
 			.error(function (data, status, headers, config) {
